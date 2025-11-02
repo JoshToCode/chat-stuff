@@ -1,0 +1,66 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    
+}
+body{
+    background-image: linear-gradient(to right, rgb(104, 0, 145), rgb(214, 0, 196));
+    height: 100vh;
+    width: 100%;
+
+}
+.login{
+    background-color: white;
+    width: 34%;
+    margin-top: 10%;
+margin-left: 35%;
+  border-radius: 20px;
+}
+.ll{
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(172, 172, 172, 0.329);
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 25px;
+    padding-bottom: 17px;
+}
+.name{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.384);
+    display: block;
+    width: 85%;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    margin-left: 6%;
+    padding: 2%;
+margin-top: 5%;
+}
+.FP{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(161, 161, 161);
+    margin-top: 6%;
+    margin-left: 6%;
+}
+.logb{
+    cursor: pointer;
+    margin-top: 11%;
+    border: 1px solid black;
+    border-radius: 30px;
+    background-color: rgb(241, 241, 241);
+    padding: 3%;
+    margin-left: 10%;
+margin-right: 10%;
+    text-align: center;
+    font-size: 25px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    
+    
+}
+.nam{
+    margin-top: 9%;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-bottom: 7%;
+}
