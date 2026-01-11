@@ -47,7 +47,7 @@ cont.appendChild(tex)
 }
 
 
-setInterval(()=>{
+/* setInterval(()=>{
    const user2=document.querySelector('.ech').innerHTML
 const user1=document.querySelector('.dude').innerHTML
 
@@ -71,7 +71,7 @@ return d.json()
 
 
 },2000)
-
+ */
 
 
 function talk(rep){

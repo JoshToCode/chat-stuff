@@ -5,7 +5,8 @@ require_once('test.php');
 if (!isset($_SESSION['user'])) {
    header('location:http://localhost/chat-stuff/login.php') ;
 }
- $chats=chat_selector($user2_id)
+$user2_id=$_REQUEST['id'];
+ $chats=chat_selector($user2_id);
 
 ?>
 <!DOCTYPE html>
@@ -22,8 +23,8 @@ if (!isset($_SESSION['user'])) {
 
 
     <div class="tog">
+       <p class="ech"><?php echo $_REQUEST['id'];?></p>
 
-<p class="ech"><?php echo $_REQUEST['name'] ?></p>
 
         
     <div class="chatnames">
@@ -136,23 +137,16 @@ if (!isset($_SESSION['user'])) {
     <div class="bomb">
         
 <div class="chats  bl">
-    <p class="dude"><?php echo $_SESSION['user']['id'] ?></p>
+    <p class="dude"><?php echo $_SESSION['user']['name'] ?></p>
     <p class="fs"><a href="logout.php">logout</a></p>
 </div>
 
 
-
 <div class="chat_container">
 
-<?php foreach ($ as $key => $value) {
-  # code...
-} ?>
-    <div class="chatL">
-      <p class="one">Yo bro ,i'v you done the assignment yet</p>
-      <p class="t">10:33am</p>
-    </div>
-
-    <div class="chatR">
+<?php foreach ($chats as $t) {?>
+  <?php if ($t['user1_id']==$_SESSION['user']['id']) {?>
+ <div class="chatR">
 
 
       <div class="hot">
@@ -160,6 +154,18 @@ if (!isset($_SESSION['user'])) {
       <p class="t">10:40am</p>
       </div>
     </div>
+
+  <?php }else{?>
+    
+      <div class="chatL">
+      <p class="one">Yo bro ,i'v you done the assignment yet</p>
+      <p class="t">10:33am</p>
+    </div>
+ <?php  } ?>
+<?php } ?>
+  
+
+   
 
 
 

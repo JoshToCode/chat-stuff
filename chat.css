@@ -91,7 +91,7 @@
     
 }
 .replys{
-    width: 74%;
+    width: 73%;
     background-color: rgb(236, 236, 236);
     border: 1px solid rgb(182, 182, 182);
     padding: 20px;
@@ -99,7 +99,7 @@
     bottom: 0%;
     display: flex;
     justify-content: space-between;
-    
+    margin-left: 25%;
 }
 .rp{
    width: 90%;
@@ -145,6 +145,7 @@ a{
 .az{
     margin-top: 10px;
     font-size: 30px;
+    color: black;
 }
 .ech{
     visibility: hidden;
@@ -173,4 +174,21 @@ h2{
 }
 .da{
     display: flex;
+}
+@media  (320px <= width <= 480px){
+
+    .dad{
+        display:none;
+    }
+    .replys{
+    width: 100%;
+    background-color: rgb(236, 236, 236);
+    border: 1px solid rgb(182, 182, 182);
+    padding: 20px;
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-between;
+    
+}
 }

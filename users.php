@@ -37,7 +37,7 @@ var_dump($te);
 <div class="all">
    
   <div class="imgs">
-      <a href="chat.php?name=<?php echo $t['id'] ?>">
+      <a href="chat.php?id=<?php echo $t['id'] ?>">
             
                <div class="daz">   
                   <div>

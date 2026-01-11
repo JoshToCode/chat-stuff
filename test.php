@@ -11,6 +11,6 @@ function sel()  {
 function chat_selector($user2_id) {
     global $connect;
     $id=$_SESSION['user']['id'];
-    $select="SELECT * FROM user WHERE user1_id='$id' AND user2_id='$user2_id'";
+    $select="SELECT * FROM chats WHERE user1_id='$id' AND user2_id='$user2_id'";
    return  mysqli_query($connect,$select);
 }

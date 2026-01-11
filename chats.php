@@ -2,7 +2,7 @@
 require_once('head.php');
 
 function insert_chat(){
-global $connects;
+global $connect;
 $data=json_decode( file_get_contents('php://input'),true);
 $id1= $data['id1'];
 $id2= $data['id2'];
@@ -12,7 +12,7 @@ $ftg=$data['write'];
 if($ftg){
 
 $query="INSERT INTO chats(user1_id,user2_id,content) VALUE('$id1','$id2','$content')";
-mysqli_query($connects,$query);
+mysqli_query($connect,$query);
 echo json_encode($data);
 }
 
@@ -23,7 +23,7 @@ insert_chat();
 
 
 function select_chat(){
-global $connects;
+global $connect;
 
 
 $data=json_decode(file_get_contents('php://input'),true);
@@ -31,7 +31,7 @@ $id1=$data['id1'];
 $id2= $data['id2'];
 $select_query="SELECT * FROM chats WHERE user1_id = '$id1' AND user2_id = '$id2'";
 
-$query=mysqli_query($connects,$select_query);
+$query=mysqli_query($connect,$select_query);
 
 $row=mysqli_num_rows($query);
 
