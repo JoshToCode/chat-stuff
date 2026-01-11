@@ -36,6 +36,8 @@ $insert="INSERT INTO user (name,email,password) VALUES ( '$name','$email','$pass
  $last_id=mysqli_insert_id($connect);
 
  $_SESSION['user']=ses($last_id);
+   header("location:http://localhost/chat-stuff/users.php");
+
    }else{
     echo 'email has been used';
    }
@@ -50,7 +52,8 @@ function ses($id)  {
   global $connect;
   $select="SELECT * FROM user WHERE id='$id'";
   $sesa=mysqli_query($connect,$select);
-  return false;
+  $aq=mysqli_fetch_assoc($sesa);
+  return $aq ;
 }
 
 
@@ -77,13 +80,17 @@ function login()  {
    $cf=mysqli_query($connect,$select);
    $row=mysqli_num_rows($cf);
 
-
-echo $row;
-
    if ($row === 0) {
      echo'this input is not found';
      return false;
-   }
+   }else{
+    $aq=mysqli_fetch_assoc($cf);
+    $_SESSION['user']=$aq;
+    header("location:http://localhost/chat-stuff/users.php");
+     }
 }}
 login();
+
+
+
 ?>

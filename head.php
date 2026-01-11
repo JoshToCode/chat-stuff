@@ -1,8 +1,12 @@
 <?php 
-$connect=mysqli_connect('localhost','root','','signup_login');
-$connects=mysqli_connect('localhost','root','','bookstore');
+$connect=mysqli_connect('localhost','root','','chat');
+$connects=mysqli_connect('localhost','root','','joshgame');
+
 if (!$connect) {
     echo 'something went wroung';
 }
+
+
+
 session_start()
 ?>

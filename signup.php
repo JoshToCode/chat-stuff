@@ -1,7 +1,9 @@
 <?php 
 require_once('head.php');
 require_once('controller.php');
-
+if (isset($_SESSION['user'])) {
+   header('location:http://localhost/chat-stuff/users.php') ;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
