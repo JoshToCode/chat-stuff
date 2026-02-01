@@ -38,7 +38,7 @@ $te=sel();
 <div class="all">
    
   <div class="imgs">
-      <a href="chat.php?id=<?php echo $t['id'] ?>">
+      <a href="index.php?id=<?php echo $t['id'] ?>">
             
                <div class="daz">   
                   <div>
