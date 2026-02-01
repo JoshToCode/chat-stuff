@@ -1,9 +1,12 @@
 const send=document.querySelector('.az')
 send.addEventListener('click',()=>{
+   
 const text=document.querySelector('.rp').value
-const user2=document.querySelector('.ech').innerHTML
-const user1=document.querySelector('.dude').innerHTML
+const user2=document.querySelector('.nbm').id
+const user1=document.querySelector('.dude').id
 
+ 
+console.log(user1)
 const val={
    'id1':user1,
    'id2':user2,
@@ -15,7 +18,7 @@ if (text.length===0) {
    alert('noting is found')
 }
 else{
- 
+ document.querySelector('.rp').value=''
    fetch('chats.php', {
       method:'POST',
       headers:{'Content-Type':'application/json'},
@@ -23,7 +26,8 @@ else{
    }).then((e)=>{
    return e.json()
    }).then((t)=>{
-   console.log(t)
+ 
+    
    })
    createEle(text)
 }
@@ -46,10 +50,11 @@ cont.appendChild(tex)
 
 }
 
+  
+setInterval(()=>{ 
+   const user2=document.querySelector('.nbm').id
 
-/* setInterval(()=>{
-   const user2=document.querySelector('.ech').innerHTML
-const user1=document.querySelector('.dude').innerHTML
+const user1=document.querySelector('.dude').id
 
 const id={
    'id1':user1,
@@ -66,38 +71,49 @@ fetch('chats.php',{
 return d.json()
    })
    .then((h)=>{
-      talk(h)
+      
+     talk(h,user1)
    })
 
 
-},2000)
- */
+},3000)
+ 
 
 
-function talk(rep){
-   let contra=document.querySelector('.chat_container')
-rep.forEach(sub => {
-     const user2=document.querySelector('.ech').innerHTML
-const user1=document.querySelector('.dude').innerHTML
-let ty; let st;
-console.log(sub['user1_id'])
-if (sub['user1_id']==user1) {
-    st=`<div class="chatR">
-   <div>
-    <p class="ones">${sub['content']}</p>
-    <p class="t">10:30am</p>
-   </div>
-</div>
-`
-}else{
+
+
+function talk(rep,id1){
+
+   const chats=document.querySelector('.chat_container')
+   chats.innerHTML='';
+
+  rep.forEach(co => {
+  if (co['user1_id']==id1) {
+  const daddy=  document.createElement('div')
+  daddy.className='chatR'
+  const mommy=document.createElement('div')
+  mommy.className='hot'
+  const child=document.createElement('p')
+  child.className='ones'
+  child.innerHTML=co['content']
+ mommy.appendChild(child)
+ daddy.appendChild(mommy)
+
+
+ chats.appendChild(daddy)
+
+
+  }else{
+
+
    
- ty=`<div class="chatL">
-   <p class="one">${sub['content']}</p>
-   <p class="t">10:30am</p>
- </div>`
-}
-
-contra.innerHTML+=st
-
-});
+   const daddy1=document.createElement('div')
+   daddy1.className='chatL'
+   const mommy1=document.createElement('p')
+   mommy1.className='one'
+   mommy1.innerHTML=co['content']
+   daddy1.appendChild(mommy1)
+   chats.appendChild(daddy1)
+  }
+  });
 }

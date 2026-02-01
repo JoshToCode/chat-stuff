@@ -29,9 +29,9 @@ global $connect;
 $data=json_decode(file_get_contents('php://input'),true);
 $id1=$data['id1'];
 $id2= $data['id2'];
-$select_query="SELECT * FROM chats WHERE user1_id = '$id1' AND user2_id = '$id2'";
+$select="SELECT * FROM chats WHERE (user1_id='$id1' AND user2_id='$id2') OR (user2_id='$id1' AND user1_id='$id2')";
 
-$query=mysqli_query($connect,$select_query);
+$query=mysqli_query($connect,$select);
 
 $row=mysqli_num_rows($query);
 

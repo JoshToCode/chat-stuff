@@ -18,10 +18,13 @@ if (isset($_SESSION['user'])) {
 <div class="login">
 <p class="ll">Signup</p>
 <form method="post">
+    <p class="email">Name</p>
 <input type="text" placeholder="Username" class="name" name='name'>
 <p><?php $error['name'] ?></p>
+ <p class="email">Email</p>
 <input type="text" placeholder="Email" class="name" name="email" >
 <p><?php $error['email'] ?></p>
+ <p class="email">Password</p>
 <input type="text" placeholder="Password" class="name" name="password" >
 <p><?php $error['password'] ?></p>
 <button class="logb" name='signup'>Register</button>

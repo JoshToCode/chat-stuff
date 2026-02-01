@@ -16,13 +16,16 @@ if (isset($_SESSION['user'])) {
 <body>
  <form action="" method="post">
  <div class="login">
-<p class="ll">Login</p>
+   
+<p class="ll">Login Form</p>
+ <p class="email">Email</p>
 <input type="text" placeholder="Email" class="name" name="email">
-<p><?php echo $error['email'] ?></p>
+<p class="error"><?php echo $error['email'] ?></p>
+<p class="email">Password</p>
 <input type="text" placeholder="Password" class="name" name="password">
-<p><?php echo $error['password'] ?></p>
+<p class="error"><?php echo $error['password'] ?></p>
 <p class="FP">Forgot passord ?</p>
-<button class="logb" name="login">login</button>
+<button class="logb" name="login">Login</button>
 <p class="nam">Not a Member? <a href="signup.php">sign up</a></p>
 </div>
 </form>  

@@ -7,8 +7,12 @@ if (!isset($_SESSION['user'])) {
 }
 $user2_id=$_REQUEST['id'];
  $chats=chat_selector($user2_id);
-
+ $names=chat_names($user2_id);
+ 
+ $us=sel();
+ 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +27,7 @@ $user2_id=$_REQUEST['id'];
 
 
     <div class="tog">
-       <p class="ech"><?php echo $_REQUEST['id'];?></p>
+       <p class="nbm" id="<?php echo $_REQUEST['id'];?>"></p> 
 
 
         
@@ -51,81 +55,17 @@ $user2_id=$_REQUEST['id'];
        <p class="search"><i class="fa-solid fa-magnifying-glass yoy"></i><input type="text" placeholder="Search" class="yo"></p>
        </div>
        </div>
-<div class="dad">
-       <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-     <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-
+   <div class="dad">
+      <?php foreach ($us as $ser) { ?>
          <div class="people">
         <img src="images/images.jpg" alt="" class="pop">
         <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
+        <p class="stuf"><a href="chat.php?id=<?php echo $ser['id'] ?>"><?php echo $ser['name'] ?></a></p>
         <p class="jo">yo,what up?</p>
         </div>
         <p class="time">10:32am</p>
        </div>
-
-         <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-
-         <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-
-         <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-
-         <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-
-         <div class="people">
-        <img src="images/images.jpg" alt="" class="pop">
-        <div class="ch">
-        <p class="stuf">Alexzander Joe</p>
-        <p class="jo">yo,what up?</p>
-        </div>
-        <p class="time">10:32am</p>
-       </div>
-
-    
-    
-
+      <?php }?>
 </div>
 
     </div>
@@ -135,35 +75,38 @@ $user2_id=$_REQUEST['id'];
 
 
     <div class="bomb">
-        
+    
 <div class="chats  bl">
-    <p class="dude"><?php echo $_SESSION['user']['name'] ?></p>
+  
+    <p class="dude" id="<?php echo $_SESSION['user']['id'] ?>"><?php echo $names['name'] ?></p>
+  
     <p class="fs"><a href="logout.php">logout</a></p>
 </div>
 
 
-<div class="chat_container">
+ <div class="chat_container">
 
-<?php foreach ($chats as $t) {?>
-  <?php if ($t['user1_id']==$_SESSION['user']['id']) {?>
- <div class="chatR">
+      <?php foreach ($chats as $t) {?>
 
 
-      <div class="hot">
-        <p class="ones">oh ok ,Anyways i've finsh further maths assignment</p>
-      <p class="t">10:40am</p>
-      </div>
-    </div>
 
-  <?php }else{?>
-    
-      <div class="chatL">
-      <p class="one">Yo bro ,i'v you done the assignment yet</p>
-      <p class="t">10:33am</p>
-    </div>
- <?php  } ?>
-<?php } ?>
-  
+        <?php if ($t['user1_id']==$_SESSION['user']['id']) {?>
+      <div class="chatR">
+            <div class="hot">
+              <p class="ones"><?php echo $t['content'] ?></p>
+            <p class="t"></p>
+            </div>
+          </div>
+
+        <?php }else {?>
+          
+            <div class="chatL">
+            <p class="one"><?php echo $t['content'] ?></p>
+            <p class="t"></p>
+          </div>
+      <?php } ?>
+      <?php } ?>
+        
 
    
 
@@ -175,8 +118,10 @@ $user2_id=$_REQUEST['id'];
 </div>
 
 <div class="replys">
+   <p class="azs"><i class="fa-solid fa-paperclip"></i></p>
     <input type="text"  placeholder="Reply massage" class="rp">
     <p class="az"><i class="fa-solid fa-paper-plane"></i></p>
+   
 </div>
     </div>
 </div>

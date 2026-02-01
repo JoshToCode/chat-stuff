@@ -32,7 +32,7 @@ function signup()  {
    $row= mysqli_num_rows($cf);
    if ($row===0) {
 $insert="INSERT INTO user (name,email,password) VALUES ( '$name','$email','$password' )";
- $q=mysqli_query($connect,$insert);
+ mysqli_query($connect,$insert);
  $last_id=mysqli_insert_id($connect);
 
  $_SESSION['user']=ses($last_id);

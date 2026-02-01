@@ -6,7 +6,7 @@ if (!isset($_SESSION['user'])) {
    header('location:http://localhost/chat-stuff/login.php') ;
 }
 $te=sel();
-var_dump($te);
+
 
 
 ?>
@@ -26,7 +26,8 @@ var_dump($te);
    <p class="pop">Security score</p>
 <p class="pop">User type</p>
 <p class="pop">Mulitifactor</p>
-
+ 
+<p class="logout"><a href="logout.php">logout</a></p>
 </div>
 
 </div>
@@ -41,7 +42,7 @@ var_dump($te);
             
                <div class="daz">   
                   <div>
-                     <img src="download.jpg" alt="" srcset="" class="img">
+                     <p class="img"><?php echo $t['name'][0]  ?></p>
                   </div>
                   <div class="box">
                      <p class="friends"><?php echo $t['name'] ?></p>
