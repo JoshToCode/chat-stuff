@@ -35,5 +35,8 @@ function timer(){
 global $connects;
 $select="SELECT * FROM chats  ";
 }
-timer()
+timer();
+$file=$data['file'];
+
+
 ?>

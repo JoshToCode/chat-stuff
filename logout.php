@@ -7,4 +7,4 @@ session_unset();
 session_destroy();
 
 
-header("location:http://localhost/chat-stuff/login.php");
+header("location:http://localhost/chat-stuff/chat-stuff/login.php");

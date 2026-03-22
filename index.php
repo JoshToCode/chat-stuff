@@ -3,7 +3,7 @@ require_once('head.php');
 require_once('controller.php');
 require_once('test.php');
 if (!isset($_SESSION['user'])) {
-   header('location:http://localhost/chat-stuff/login.php') ;
+   header('location:http://localhost/chat-stuff/chat-stuff/login.php') ;
 }
 $user2_id=$_REQUEST['id'];
  $chats=chat_selector($user2_id);
@@ -21,6 +21,7 @@ $user2_id=$_REQUEST['id'];
     <link rel="stylesheet" href="chat.css">
     <script src="https://kit.fontawesome.com/d3d2e1bd1e.js" crossorigin="anonymous"></script>
     <script src="chat.js" defer></script>
+    <script src="fileclick.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -60,7 +61,7 @@ $user2_id=$_REQUEST['id'];
          <div class="people">
         <img src="images/images.jpg" alt="" class="pop">
         <div class="ch">
-        <p class="stuf"><a href="chat.php?id=<?php echo $ser['id'] ?>"><?php echo $ser['name'] ?></a></p>
+        <p class="stuf"><a href="index.php?id=<?php echo $ser['id'] ?>"><?php echo $ser['name'] ?></a></p>
         <p class="jo">yo,what up?</p>
         </div>
         <p class="time">10:32am</p>
@@ -118,15 +119,21 @@ $user2_id=$_REQUEST['id'];
 </div>
 
 <div class="replys">
-   <p class="azs"><i class="fa-solid fa-paperclip"></i></p>
+<p class='holder'></p>
+ <div class="under">
+   <p class="azs"><i class="fa-solid fa-paperclip"></i> files</p>
     <input type="text"  placeholder="Reply massage" class="rp">
-    <p class="az"><i class="fa-solid fa-paper-plane"></i></p>
+    <p class="az"><i class="fa-solid fa-paper-plane "></i> enter</p>
+  </div>
+  
    
 </div>
+
+
     </div>
 </div>
 
 
-    
+ <input type="file" class="invinsible inv" >   
 </body>
 </html>

@@ -102,7 +102,7 @@
     padding: 20px;
     position: absolute;
     bottom: 0%;
-    display: flex;
+   
     justify-content: space-between;
     margin-left: 25%;
 }
@@ -215,4 +215,9 @@ h2{
     justify-content: space-between;
     
 }
+
+}
+
+.under{
+     display: flex;
 }

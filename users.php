@@ -3,7 +3,7 @@ require_once('head.php');
 require_once('controller.php');
  require_once('test.php');
 if (!isset($_SESSION['user'])) {
-   header('location:http://localhost/chat-stuff/login.php') ;
+   header('location:http://localhost/chat-stuff/chat-stuff/login.php') ;
 }
 $te=sel();
 

@@ -1,20 +1,23 @@
 const send=document.querySelector('.az')
+const zo=document.querySelector('.holder')
+
 send.addEventListener('click',()=>{
    
 const text=document.querySelector('.rp').value
 const user2=document.querySelector('.nbm').id
 const user1=document.querySelector('.dude').id
 
- 
-console.log(user1)
+
+
 const val={
    'id1':user1,
    'id2':user2,
    'text':text,
+   'file':zo,
    'write':true
 }
 
-if (text.length===0) {
+if (text.length===0 && zo.innerHTML.length===0) {
    alert('noting is found')
 }
 else{

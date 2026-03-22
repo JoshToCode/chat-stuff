@@ -36,7 +36,7 @@ $insert="INSERT INTO user (name,email,password) VALUES ( '$name','$email','$pass
  $last_id=mysqli_insert_id($connect);
 
  $_SESSION['user']=ses($last_id);
-   header("location:http://localhost/chat-stuff/users.php");
+   header("location:http://localhost/chat-stuff/chat-stuff/users.php");
 
    }else{
     echo 'email has been used';
