@@ -1,25 +1,33 @@
 const send=document.querySelector('.az')
-const zo=document.querySelector('.holder')
+let chas=''
+const file=document.querySelector('.inv')
+file.addEventListener('change',(e)=>{
+chas=e.target.files[0]
 
+})
 send.addEventListener('click',()=>{
-   
+   console.log(chas)
+
 const text=document.querySelector('.rp').value
 const user2=document.querySelector('.nbm').id
 const user1=document.querySelector('.dude').id
+const file=document.querySelector('.inv')
 
-
+console.log(file)
 
 const val={
    'id1':user1,
    'id2':user2,
    'text':text,
-   'file':zo,
+   'file':file,
    'write':true
 }
-
-if (text.length===0 && zo.innerHTML.length===0) {
-   alert('noting is found')
+if (chas.length===0) {
+   alert('hello')
 }
+else if (text.length===0) {
+   alert('nothing is found')
+} 
 else{
  document.querySelector('.rp').value=''
    fetch('chats.php', {
@@ -54,7 +62,7 @@ cont.appendChild(tex)
 }
 
   
-setInterval(()=>{ 
+/* setInterval(()=>{ 
    const user2=document.querySelector('.nbm').id
 
 const user1=document.querySelector('.dude').id
@@ -80,7 +88,7 @@ return d.json()
 
 
 },3000)
- 
+  */
 
 
 

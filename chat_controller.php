@@ -37,6 +37,7 @@ $select="SELECT * FROM chats  ";
 }
 timer();
 $file=$data['file'];
+var_dump($file);
 
 
 ?>
